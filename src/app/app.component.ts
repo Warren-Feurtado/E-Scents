@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'E-Scents';
+  
+  patchScrolling(){
+    window.scroll({behavior: 'smooth', top: 0});
+  }
 }

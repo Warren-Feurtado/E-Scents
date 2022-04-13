@@ -1,0 +1,56 @@
+<div class="container">
+    <h1>Your Cart</h1>
+    <div class="flexBx">
+        <div class="left">
+            
+            <div *ngIf="index > 0">
+                <table class="cartProds">
+                    <tr *ngFor="let item of items; let i=index">
+                        <td>
+                            <div class="imgBx">
+                                <img [src]="item.logoSrc" [alt]="item.logoAlt">
+                            </div>
+                        </td>
+                        <td>
+                            <h4>{{item.brand}}</h4>
+                            <p>{{item.name}}</p>
+                        </td>
+                        <td>
+                            <span class="dec">-</span><input type="number" value="1"><span class="inc">+</span>
+                        </td>
+                        <td>
+                            <h3>{{item.price | currency}}</h3>
+                        </td>
+                        <td>
+                            <button (click)="prodDelete(item)"><mat-icon class="cartProdDelete" >delete_forever</mat-icon></button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="emptyCart" *ngIf="index == 0">
+                <div class="emptyCartimgBx">
+                    <img src="https://sethisbakery.com/assets/website/images/empty-cart.png" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="right">
+    
+            <div class="checkout">
+                <h2 class="checkoutHeading">Order</h2>
+                <div class="totalItems">    
+                    <span>Total Item(s)</span>
+                    <span class="amnts1">{{index}}</span>
+                </div>
+                <div class="total">
+                    <span>Total</span>
+                    <span class="amnts1">$ 0</span>
+                </div>
+                <div class="subTotal">
+                    <h3>Subtotal</h3>
+                    <span class="amnts">$ 0</span>
+                </div>
+                <button class="checkOutBtn">PROCEED TO CHECKOUT</button>
+            </div>
+    
+        </div>
+    </div>

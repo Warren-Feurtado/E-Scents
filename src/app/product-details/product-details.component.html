@@ -1,0 +1,17 @@
+<div class="container">
+
+    <div class="flexBx" *ngIf="product">
+        <div class="left">
+            <img [src]="product.logoSrc" [alt]="product.logoAlt">
+        </div>
+        <div class="right">
+          <h2 class="prodName">{{product.name}}</h2>
+          <h4 class="prodBrand">By: {{product.brand}}</h4>
+          <p class="prodDesc">{{product.description}}</p>
+          <h3 class="prodPrice">{{product.price | currency}}</h3>
+          <h5 class="prodSize">size: <span>{{product.size}}</span></h5>
+            
+          <button class="detailsBtn" (click)="addToCart(product)">ADD TO CART</button>
+        </div>
+    </div>
+</div>

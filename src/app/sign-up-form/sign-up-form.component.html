@@ -1,0 +1,71 @@
+<div class="container">
+    <div class="regForm">
+        <h2>Create New Customer Account</h2>
+
+        <form class="rgFrm" [formGroup]="regForm" (ngSubmit)="onSubmit()" novalidate>
+            <div class="left">
+                <h1>PERSONAL INFORMATION</h1>
+                <div class="inptBx">
+                    <label for="fName">First Name<span>*</span></label><br>
+                    <input type="text" id="fName" formControlName="firstName" placeholder="First Name">
+                    <div class="alertBx">
+                        {{errorAlertFirstName()}}
+                    </div>
+                </div> 
+
+                <div class="inptBx">
+                    <label for="lName">Last Name:</label><br>
+                    <input type="text" id="lName" formControlName="lastName" placeholder="Last Name">
+    
+                    <div class="alertBx">
+                        {{errorAlertLastName()}}
+                    </div>
+                </div>
+
+                <div class="inptBx">
+                    <label for="UName">Username:</label><br>
+                    <input type="text" id="UName" formControlName="userName" placeholder="Username">
+        
+                    <div class="alertBx">
+                        {{errorAlertUsername()}}
+                    </div>
+                </div>
+                <span class="log">Already A Customer? <a routerLink="/log-in-form" id="logIn">Log In Here</a></span>
+            </div>
+
+            <div class="right">
+                <h1>SIGN-IN INFORMATION</h1>
+                <div class="inptBx">
+                    <label for="email">Email:</label><br>
+                    <input type="email" id="email" formControlName="Email" pattern="(?!(^[.-].*|[^@]*[.-]@|.*\.{2,}.*)|^.{254}.)([a-zA-Z0-9!#$%&'*+\/=?^_`{|}~.-]+@)(?!-.*|.*-\.)([a-zA-Z0-9-]{1,63}\.)+[a-zA-Z]{2,15}" placeholder="Email Address">
+        
+                    <div class="alertBx">
+                        {{ errorAlertEmail()}}
+                    </div>
+                </div>
+                <div class="inptBx">
+                    <label for="password">Password:</label><br>
+                    <input type="password" id="password" formControlName="Password" placeholder="Password">
+        
+                    <div class="alertBx">
+                        {{errorAlertPass()}}
+                    </div>
+                </div>
+                <div class="inptBx">
+                    <label for="passCon">Confirm password:</label><br>
+                    <input type="password" id="passCon" formControlName="PassConfirm" placeholder="Confirm Password">
+        
+                    <div class="alertBx">
+                        {{errorAlertPassConfirm()}}
+                    </div>
+                </div>
+                <div class="subscribe">
+                    <input type="checkbox"> <label>Sign Up For Our Newsletter</label>  
+                </div>
+                <button type="submit" class="subBtn" ng-disabled="custRegForm.$invalid">Create Account</button>
+
+                <p class="policy">Your personal data will be used to support your experience throughout this website, to manage access to your account, and for other purposes described in our <a href="#">privacy policy.</a></p>
+            </div>
+        </form>
+    </div>
+</div>

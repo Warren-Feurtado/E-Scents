@@ -1,0 +1,37 @@
+<div class="topBar">
+<span>FREE DELIVERY ON ORDERS ABOVE $59</span>
+</div>
+
+<nav>
+    <a routerLink="/home-page"><div class="logo">
+        <img src="../assets/Images/E-scents-logo-2-removebg-preview.png" alt="">
+    </div></a>
+
+    <ul class="navLiksContain">
+        <a class="links" routerLink="/home-page" routerLinkActive="active"><li>Home</li></a>
+        <a class="links" routerLink="/mens-fragrances" routerLinkActive="active"><li>Men's</li></a>
+        <a class="links" routerLink="/womens-fragrances" routerLinkActive="active"><li>Women's</li></a>
+        <a class="links" routerLinkActive="active"><li>Shop by Brand</li></a>
+    </ul>
+
+    <div class="search">
+        <input type="search" placeholder="Type to search">
+        <button class="searchIcon"><mat-icon >search</mat-icon></button>
+    </div>
+
+    <div class="member">
+        <div class="account">
+            <a class="memberIcon" routerLink="/log-in-form">
+                <mat-icon>account_circle</mat-icon><span>My Account</span>
+            </a>
+            
+        </div>
+        <div class="cart">
+            <a routerLink="/cart">
+                <span class="cartIcon"> <mat-icon>shopping_cart</mat-icon></span>
+                <span class="cartAmount">{{2}}</span>
+            </a>
+           
+        </div>
+    </div>
+</nav>
