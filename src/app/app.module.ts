@@ -38,6 +38,7 @@ import { CartComponent } from './cart/cart.component';
     BrowserModule,
     HttpClientModule,
     RouterModule.forRoot([
+      {path: '', component: HomePageComponent},
       {path: 'home-page', component: HomePageComponent},
       {path: 'mens-fragrances', component: MensPageComponent},
       {path: 'womens-fragrances', component: WomensPageComponent},
